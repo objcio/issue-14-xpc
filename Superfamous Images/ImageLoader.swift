@@ -14,7 +14,7 @@ import ApplicationServices
 class ImageLoader: NSObject {
     
     // An XPC service
-    @lazy var imageDownloadConnection: NSXPCConnection = {
+    lazy var imageDownloadConnection: NSXPCConnection = {
         let connection = NSXPCConnection(serviceName: "io.objc.Superfamous-Images.ImageDownloader")
         connection.remoteObjectInterface = NSXPCInterface(`protocol`: ImageDownloaderProtocol.self)
         connection.resume()

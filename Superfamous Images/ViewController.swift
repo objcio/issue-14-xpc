@@ -12,7 +12,7 @@ import Cocoa
 
 class ViewController: NSViewController, ImageSetChangeObserver {
     
-    @IBOutlet var tableView: NSTableView
+    @IBOutlet var tableView: NSTableView?
     var imageSet: ImageSet?
     
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class ViewController: NSViewController, ImageSetChangeObserver {
     }
     
     func imageSetDidChange(set: ImageSet) {
-        self.tableView.reloadData()
+        self.tableView?.reloadData();
     }
 }
 

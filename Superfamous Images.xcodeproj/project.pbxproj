@@ -65,6 +65,13 @@
 			remoteGlobalIDString = 3E7610F51956115B00985F48;
 			remoteInfo = "Superfamous Images";
 		};
+		BBAD50CF198749690031C840 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E7610EE1956115B00985F48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E7610F51956115B00985F48;
+			remoteInfo = "Superfamous Images";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -255,6 +262,7 @@
 				3EF079891969D3BD00F675AB /* PBXTargetDependency */,
 				3EF0798B1969D3BD00F675AB /* PBXTargetDependency */,
 				3EDF29D0196C8883005EAE4D /* PBXTargetDependency */,
+				BBAD50D0198749690031C840 /* PBXTargetDependency */,
 			);
 			name = "Superfamous ImagesTests";
 			productName = "Superfamous ImagesTests";
@@ -419,6 +427,11 @@
 			isa = PBXTargetDependency;
 			target = 3E7610F51956115B00985F48 /* Superfamous Images */;
 			targetProxy = 3EF0798A1969D3BD00F675AB /* PBXContainerItemProxy */;
+		};
+		BBAD50D0198749690031C840 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E7610F51956115B00985F48 /* Superfamous Images */;
+			targetProxy = BBAD50CF198749690031C840 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
