@@ -595,12 +595,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "ImageDownloader/io.objc.Superfamous-Images.ImageDownloader.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ImageDownloader/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks @loader_path/../../../../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_MODULE_NAME = ImageDownloader;
 				PRODUCT_NAME = "io.objc.Superfamous-Images.$(TARGET_NAME:rfc1034identifier)";
@@ -615,8 +616,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "ImageDownloader/io.objc.Superfamous-Images.ImageDownloader.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ImageDownloader/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks @loader_path/../../../../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_MODULE_NAME = ImageDownloader;
 				PRODUCT_NAME = "io.objc.Superfamous-Images.$(TARGET_NAME:rfc1034identifier)";

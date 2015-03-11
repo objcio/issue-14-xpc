@@ -13,7 +13,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBAction func showWebsite(AnyObject) {
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://superfamous.com"))
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://superfamous.com")!)
     }
     
 }

@@ -33,7 +33,7 @@ class ImageSet : NSObject {
     func startLoadingImages() {
         for urlString in self.imageURLs {
             let url = NSURL(string: urlString)
-            self.imageLoader.retrieveImageAtURL(url) {
+            self.imageLoader.retrieveImageAtURL(url!) {
                 image in dispatch_async(dispatch_get_main_queue()) {
                     var i = self.images
                     i.append(image)
