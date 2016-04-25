@@ -13,7 +13,7 @@ import Foundation
 class ImageDownloader : NSObject, ImageDownloaderProtocol {
     let session: NSURLSession
     
-    init()  {
+    override init()  {
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         session = NSURLSession(configuration: config)
     }
