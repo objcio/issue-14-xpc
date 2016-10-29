@@ -12,35 +12,43 @@ import ApplicationServices
 
 
 class ImageLoader: NSObject {
-    
+
     // An XPC service
     lazy var imageDownloadConnection: NSXPCConnection = {
         let connection = NSXPCConnection(serviceName: "io.objc.Superfamous-Images.ImageDownloader")
-        connection.remoteObjectInterface = NSXPCInterface(`protocol`: ImageDownloaderProtocol.self)
+        connection.remoteObjectInterface = NSXPCInterface(with: ImageDownloaderProtocol.self)
         connection.resume()
         return connection
     }()
-    
+
     deinit {
-        self.imageDownloadConnection.invalidate()
+        imageDownloadConnection.invalidate()
     }
-    
-    func retrieveImageAtURL(url: NSURL, completionHandler: (NSImage?)->Void) {
-        
-        let downloader = self.imageDownloadConnection.remoteObjectProxyWithErrorHandler {
-            	(error) in NSLog("remote proxy error: %@", error)
-            } as ImageDownloaderProtocol
-        downloader.downloadImageAtURL(url) {
-            data in
-            dispatch_async(dispatch_get_global_queue(0, 0)) {
-                let source = CGImageSourceCreateWithData(data, nil).takeRetainedValue()
-                let cgImage = CGImageSourceCreateImageAtIndex(source, 0, nil).takeRetainedValue()
-                var size = CGSize(
-                    width: CGFloat(CGImageGetWidth(cgImage)),
-                    height: CGFloat(CGImageGetHeight(cgImage)))
-                let image = NSImage(CGImage: cgImage, size: size)
-                completionHandler(image)
+
+    func retrieveImage(url: URL, completionHandler: @escaping (NSImage?) -> Void) {
+
+        let handler: (Error) -> () = { error in
+            print("remote proxy error: \(error)")
+        }
+
+        let downloader = imageDownloadConnection.remoteObjectProxyWithErrorHandler(handler) as! ImageDownloaderProtocol
+
+        downloader.downloadImageAtURL(url) { data in
+            DispatchQueue.global().async {
+                var image: NSImage?
+                defer {
+                    completionHandler(image)
+                }
+                guard let source = CGImageSourceCreateWithData(data as! CFData, nil),
+                    let cgImage = CGImageSourceCreateImageAtIndex(source, 0, nil) else {
+                        return
+                }
+
+                let size = CGSize(width: CGFloat(cgImage.width), height: CGFloat(cgImage.height))
+                image = NSImage(cgImage: cgImage, size: size)
             }
         }
     }
 }
+
+

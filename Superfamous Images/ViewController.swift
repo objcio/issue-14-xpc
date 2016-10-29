@@ -17,12 +17,13 @@ class ViewController: NSViewController, ImageSetChangeObserver {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imageSet = ImageSet(changeObserver: self)
-        self.imageSet?.startLoadingImages()
+
+        imageSet = ImageSet(changeObserver: self)
+        imageSet?.startLoadingImages()
     }
     
-    func imageSetDidChange(set: ImageSet) {
-        self.tableView?.reloadData();
+    func imageSetDidChange(_ set: ImageSet) {
+        tableView?.reloadData();
     }
 }
 
@@ -30,27 +31,21 @@ class ViewController: NSViewController, ImageSetChangeObserver {
 
 extension ViewController : NSTableViewDataSource, NSTableViewDelegate {
     
-    func numberOfRowsInTableView(tableView: NSTableView!) -> Int {
-        if let c = self.imageSet?.images.count {
-            return c
-        } else {
-            return 0
-        }
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return imageSet?.images.count ?? 0
     }
     
-    func tableView(tableView: NSTableView!, heightOfRow row: Int) -> CGFloat {
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 400
     }
     
-    func tableView(tableView: NSTableView!, viewForTableColumn tableColumn: NSTableColumn!, row: Int) -> NSView! {
-        let cellView = tableView.makeViewWithIdentifier("Image", owner: self) as NSTableCellView
-        var image: NSImage? = nil
-        if let c = self.imageSet?.images.count {
-            if row < c {
-                image = self.imageSet?.images[row]
-            }
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let cellView = tableView.make(withIdentifier: "Image", owner: self) as! NSTableCellView
+        var image: NSImage?
+        if let c = imageSet?.images.count, row < c {
+            image = imageSet?.images[row]
         }
-        cellView.imageView.image = image
+        cellView.imageView?.image = image
         return cellView
     }
 }

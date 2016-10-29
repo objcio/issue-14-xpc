@@ -12,5 +12,5 @@ import Foundation
 
 @objc(ImageDownloaderProtocol)
 protocol ImageDownloaderProtocol {
-    func downloadImageAtURL(url: NSURL!, withReply: ((NSData!)->Void)!)
+    func downloadImageAtURL(_ url: URL!, withReply: ((Data?)->Void)!)
 }

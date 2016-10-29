@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E7610FC1956115B00985F48 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7610FB1956115B00985F48 /* main.swift */; };
 		3E7610FE1956115B00985F48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7610FD1956115B00985F48 /* ViewController.swift */; };
 		3E7611001956115B00985F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7610FF1956115B00985F48 /* AppDelegate.swift */; };
 		3E7611021956115B00985F48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7611011956115B00985F48 /* Images.xcassets */; };
@@ -91,7 +90,6 @@
 /* Begin PBXFileReference section */
 		3E7610F61956115B00985F48 /* Superfamous Images.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Superfamous Images.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E7610FA1956115B00985F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E7610FB1956115B00985F48 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3E7610FD1956115B00985F48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3E7610FF1956115B00985F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E7611011956115B00985F48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -101,12 +99,12 @@
 		3E7611101956115B00985F48 /* Superfamous_ImagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Superfamous_ImagesTests.swift; sourceTree = "<group>"; };
 		3E76111A1956253900985F48 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		3E76111C1956304600985F48 /* ImageSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSet.swift; sourceTree = "<group>"; };
-		3E7EE092195CB4EA00DF508E /* io.objc.Superfamous-Images.ImageDownloader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "io.objc.Superfamous-Images.ImageDownloader.entitlements"; sourceTree = "<group>"; };
+		3E7EE092195CB4EA00DF508E /* io.objc.Superfamous-Images.ImageDownloader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "io.objc.Superfamous-Images.ImageDownloader.entitlements"; sourceTree = "<group>"; };
 		3EADA7F41956E6EB00F2EEFC /* io.objc.Superfamous-Images.ImageDownloader.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = "io.objc.Superfamous-Images.ImageDownloader.xpc"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EADA7F71956E6EB00F2EEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EADA8071956E79900F2EEFC /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		3EADA8081956E79900F2EEFC /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		3EDB007519605EFD0042ACC7 /* Superfamous Images.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Superfamous Images.entitlements"; sourceTree = "<group>"; };
+		3EDB007519605EFD0042ACC7 /* io.objc.Superfamous-Images.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "io.objc.Superfamous-Images.entitlements"; sourceTree = "<group>"; };
 		3EDF29CC196C85B9005EAE4D /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,7 +163,7 @@
 				3E76111C1956304600985F48 /* ImageSet.swift */,
 				3E7611011956115B00985F48 /* Images.xcassets */,
 				3E7611031956115B00985F48 /* Main.storyboard */,
-				3EDB007519605EFD0042ACC7 /* Superfamous Images.entitlements */,
+				3EDB007519605EFD0042ACC7 /* io.objc.Superfamous-Images.entitlements */,
 				3E7610F91956115B00985F48 /* Supporting Files */,
 			);
 			path = "Superfamous Images";
@@ -175,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				3E7610FA1956115B00985F48 /* Info.plist */,
-				3E7610FB1956115B00985F48 /* main.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -292,11 +289,12 @@
 		3E7610EE1956115B00985F48 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = objc.io;
 				TargetAttributes = {
 					3E7610F51956115B00985F48 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -305,10 +303,12 @@
 					};
 					3E7611091956115B00985F48 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0800;
 						TestTargetID = 3E7610F51956115B00985F48;
 					};
 					3EADA7F31956E6EB00F2EEFC = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -372,7 +372,6 @@
 				3E7610FE1956115B00985F48 /* ViewController.swift in Sources */,
 				3EDF29CD196C85B9005EAE4D /* ImageDownloaderProtocol.swift in Sources */,
 				3EDF29C5196C7EF5005EAE4D /* ImageLoader.swift in Sources */,
-				3E7610FC1956115B00985F48 /* main.swift in Sources */,
 				3E76111D1956304600985F48 /* ImageSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,15 +459,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -502,8 +505,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -512,6 +517,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -521,6 +527,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -529,12 +536,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Superfamous Images/Superfamous Images.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Superfamous Images/io.objc.Superfamous-Images.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Superfamous Images/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.objc.Superfamous-Images";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -543,11 +552,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Superfamous Images/Superfamous Images.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Superfamous Images/io.objc.Superfamous-Images.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Superfamous Images/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.objc.Superfamous-Images";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -567,7 +578,9 @@
 				INFOPLIST_FILE = "Superfamous ImagesTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.objc.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -584,7 +597,9 @@
 				INFOPLIST_FILE = "Superfamous ImagesTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.objc.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -592,6 +607,7 @@
 		3EADA8031956E6EB00F2EEFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "ImageDownloader/io.objc.Superfamous-Images.ImageDownloader.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -602,25 +618,30 @@
 				INFOPLIST_FILE = ImageDownloader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.objc.Superfamous-Images.ImageDownloader";
 				PRODUCT_MODULE_NAME = ImageDownloader;
 				PRODUCT_NAME = "io.objc.Superfamous-Images.$(TARGET_NAME:rfc1034identifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		3EADA8041956E6EB00F2EEFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "ImageDownloader/io.objc.Superfamous-Images.ImageDownloader.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ImageDownloader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.objc.Superfamous-Images.ImageDownloader";
 				PRODUCT_MODULE_NAME = ImageDownloader;
 				PRODUCT_NAME = "io.objc.Superfamous-Images.$(TARGET_NAME:rfc1034identifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
