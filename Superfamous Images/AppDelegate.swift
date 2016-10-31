@@ -9,11 +9,13 @@
 import Cocoa
 
 
-
+@NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBAction func showWebsite(AnyObject) {
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://superfamous.com"))
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    }
+    @IBAction func showWebsite(_: AnyObject) {
+        NSWorkspace.shared().open(URL(string: "http://superfamous.com")!)
     }
     
 }

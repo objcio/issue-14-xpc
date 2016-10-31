@@ -11,19 +11,20 @@ import Cocoa
 
 
 @objc protocol ImageSetChangeObserver {
-    func imageSetDidChange(set: ImageSet) -> Void
+    func imageSetDidChange(_ set: ImageSet) -> Void
 }
 
 
 
 class ImageSet : NSObject {
     
-    weak var changeObserver: ImageSetChangeObserver! = nil
-    var images: [NSImage!] = [] {
+    weak var changeObserver: ImageSetChangeObserver?
+    var images: [NSImage?] = [] {
         didSet {
-            self.changeObserver.imageSetDidChange(self)
+            changeObserver?.imageSetDidChange(self)
         }
     }
+
     let imageLoader = ImageLoader()
     
     init(changeObserver observer: ImageSetChangeObserver) {
@@ -31,13 +32,11 @@ class ImageSet : NSObject {
     }
     
     func startLoadingImages() {
-        for urlString in self.imageURLs {
-            let url = NSURL(string: urlString)
-            self.imageLoader.retrieveImageAtURL(url) {
-                image in dispatch_async(dispatch_get_main_queue()) {
-                    var i = self.images
-                    i.append(image)
-                    self.images = i
+        let urls = imageURLs.flatMap { URL(string: $0) }
+        for url in urls {
+            imageLoader.retrieveImage(url: url) { image in
+                DispatchQueue.main.async {
+                    self.images.append(image)
                 }
             }
         }
@@ -45,7 +44,7 @@ class ImageSet : NSObject {
     
     // http://superfamous.com
     // Photographs are available under a CC Attribution 3.0 license.
-    let imageURLs: [String] = [
+    let imageURLs = [
         "http://payload203.cargocollective.com/1/8/282864/6367350/DSC_0058_900.JPG",
         "http://payload175.cargocollective.com/1/8/282864/5815632/9042399407_bf04388aca_o_900.jpg",
         "http://payload88.cargocollective.com/1/8/282864/4071568/DSC_0817_900.jpg",
