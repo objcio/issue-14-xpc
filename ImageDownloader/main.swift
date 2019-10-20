@@ -11,9 +11,9 @@ import Foundation
 
 
 class ServiceDelegate : NSObject, NSXPCListenerDelegate {
-    func listener(listener: NSXPCListener!, shouldAcceptNewConnection newConnection: NSXPCConnection!) -> Bool {
-        newConnection.exportedInterface = NSXPCInterface(`protocol`: ImageDownloaderProtocol.self)
-        var exportedObject = ImageDownloader()
+	func listener(_ listener: NSXPCListener, shouldAcceptNewConnection newConnection: NSXPCConnection) -> Bool {
+        newConnection.exportedInterface = NSXPCInterface(with: ImageDownloaderProtocol.self)
+        let exportedObject = ImageDownloader()
         newConnection.exportedObject = exportedObject
         newConnection.resume()
         return true
@@ -24,6 +24,6 @@ class ServiceDelegate : NSObject, NSXPCListenerDelegate {
 // Create the listener and resume it:
 //
 let delegate = ServiceDelegate()
-let listener = NSXPCListener.serviceListener()
+let listener = NSXPCListener.service()
 listener.delegate = delegate;
 listener.resume()
